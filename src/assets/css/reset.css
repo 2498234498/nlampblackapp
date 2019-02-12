@@ -1,0 +1,106 @@
+/* reset */
+html, body, div, span, p, ul, li, h1, h2, h3, h4, h5, h6, img, audio, video, input, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-font-smoothing: antialiased; /* 解决字体在移动端比例缩小后出现锯齿的问题 */
+  -webkit-text-size-adjust:100%; /* 旋转屏幕时，字体大小调整的问题 */
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 26px;
+}
+body {
+  -webkit-overflow-scrolling: touch; /* 解决IOS滑动卡顿 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* 解决移动端a标签点击默认有类似:active的效果 */
+}
+img {
+  -webkit-touch-callout: none; /* 解决移动端IOS长按图片会出现类似“保存图片”的选项 */
+}
+ul {
+  list-style: none;
+}
+input {
+  outline: none;
+  border: none;
+}
+input, textarea {
+  /* 去掉IOS的Input内阴影 */
+  border: 0;
+  -webkit-appearance: none;
+}
+a {
+  text-decoration: none;
+  color: #2d8cf0;
+}
+* {
+  box-sizing: border-box;
+  touch-action: manipulation;
+  font-family: 'Microsoft Yahei', Helvetica, Arial, sans-serif;
+}
+
+/* 重置搜索框清楚按钮样式 */
+input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* 设置全局头部样式 */
+.settings .top .left {
+  height: 100%;
+  width: 68px;
+  display: flex;
+  align-items: center;
+}
+.header h1, .header span, h1.header {
+  font-weight: normal !important;
+  font-size: 32px !important;
+}
+.header .mint-header-title {
+  font-size: 32px;
+}
+
+/* 路由过渡 */
+.child-view {
+  position: absolute;
+  width:100%;
+  height: 100%;
+  transition: all .5s cubic-bezier(.55,0,.1,1);
+}
+.slide-left-enter, .slide-right-leave-active {
+  opacity: .2;
+  transform: translate3d(99%, 0, 0);
+}
+.slide-left-leave-active, .slide-right-enter {
+  opacity: .2;
+  transform: translate3d(-99%, 0, 0);
+}
+
+.click-active {
+  position: relative;
+  overflow: hidden;
+}
+.click-active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform .3s, opacity .5s;
+}
+.click-active.blank-000::after {
+  background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+}
+.click-active:active::after {
+  transform: scale(0, 0);
+  opacity: .3;
+  transition: 0s;
+}

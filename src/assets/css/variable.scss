@@ -1,0 +1,106 @@
+// 全局scss样式/变量
+$statusBarHei: 50px;
+/* APP状态栏高度 */
+
+$headerHei: 88px+$statusBarHei;
+$footerHei: 98px;
+// 重置header的APP状态栏高度
+.mint-header {
+  padding-top: $statusBarHei !important;
+}
+
+.statusBarTop {
+  padding-top: $statusBarHei;
+}
+
+.height-header-footer {
+  height: calc(100% - #{$footerHei} - #{$headerHei}) !important;
+}
+
+/* 适配iphonex */
+
+@media only screen and (device-width:375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  // iphoneX 底部 34px 的安全区域
+  $iphoneX: 68px;
+  $footerHei: $footerHei+$iphoneX;
+  $statusBarHei: 88px;
+  $headerHei: 88px+$statusBarHei;
+  #footer {
+    height: $footerHei !important;
+    padding-bottom: $iphoneX;
+  }
+  .go-top {
+    bottom: $footerHei !important;
+  }
+  .abnormalData,
+  .attendanceDetails .main,
+  .brokenNetworkLog,
+  .historicalData,
+  .instructions .main,
+  .monitoringData,
+  .monitor-home,
+  .operateLog,
+  .realTimeData,
+  .standardData,
+  .standardDetails,
+  .workRecord,
+  #home,
+  #map,
+  .monitor-home {
+    padding-bottom: $footerHei !important;
+  }
+  .dataHome,
+  div.changeIP,
+  .feedback,
+  .settingsHome {
+    height: calc(100% - #{$footerHei}) !important;
+  }
+  .statusBarTop,
+  .mint-header {
+    padding-top: $statusBarHei !important;
+  }
+  .abnormalData,
+  .attendanceDetails,
+  .brokenNetworkLog,
+  .historicalData,
+  .instructions,
+  .monitoringData,
+  .monitor-home,
+  .operateLog,
+  .realTimeData,
+  .standardData,
+  .standardDetails,
+  .workRecord,
+  #map,
+  .monitor-home,
+  div.changeIP,
+  .feedback,
+  .settingsHome,
+  .dataHome {
+    padding-top: $headerHei !important;
+  }
+  .header,
+  .dataHome h1,
+  .feedback .top,
+  .settingsHome h1,
+  .monitor-home .header,
+  .changeIP .top {
+    height: $headerHei !important;
+  }
+
+  .height-header-footer {
+    height: calc(100% - #{$footerHei} - #{$headerHei}) !important;
+  }
+
+  .monitor-home .contain,
+  .mapInfo .graph:last-child,
+  .monitoringData .loadmoreBox,
+  .monitor-home .loadmoreBox,
+  .standardData .loadmoreBox,
+  .operateLog .loadmoreBox,
+  .brokenNetworkLog .loadmoreBox,
+  .workRecord .loadmoreBox
+  {
+    padding-bottom: 0 !important;
+  }
+}

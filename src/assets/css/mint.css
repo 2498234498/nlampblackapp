@@ -1,0 +1,99 @@
+/* 重置 toast 样式 */
+
+.custom-tip {
+  width: 477px;
+  height: auto;
+  padding: 26px 16px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.custom-tip .mint-toast-text {
+  font-size: 36px;
+  color: #fff;
+}
+
+/* 重置loading的样式 */
+
+.mint-indicator-wrapper {
+  border-radius: 8px;
+}
+
+.mint-indicator-wrapper .mint-spinner-snake {
+  border-width: 8px;
+}
+
+.mint-indicator-wrapper .mint-indicator-text {
+  font-size: 32px;
+}
+
+/* 重置header的左边返回按钮 */
+.mint-header:not(.header-map) {
+  padding-bottom: 0 !important;
+}
+.mint-header .mint-header-title {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mint-header:not(.header-map) .mint-header-button.is-left {
+  height: 100%;
+  /* overflow: hidden; */
+}
+
+.mint-header:not(.header-map) .mint-header-button.is-left a {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+
+/* 重置时间选择器的样式 */
+.mint-datetime {
+  z-index: 100001 !important;
+}
+.mint-datetime .picker-toolbar {
+  border-bottom-width: 1px;
+  /*no*/
+  height: 80px;
+}
+
+.mint-datetime-action {
+  line-height: 80px;
+  font-size: 32px;
+  transition: all 0.3s;
+  user-select: none;
+}
+
+.mint-datetime-action:active {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.picker-items {
+  font-size: 48px;
+}
+
+.picker-slot {
+  font-size: 28px;
+}
+
+/* 重置input下边框线 */
+.mint-cell-wrapper {
+  background: none;
+}
+
+/* 图片栏加载的样式 */
+.page-lazyload-image[lazy=loading] {
+  width: 80px;
+  height: 100%;
+  margin: auto;
+}
+
+/* 解决右滑与mint-ui的下拉和上拉冲突 */
+.mint-loadmore,
+textarea {
+  touch-action: pan-y;
+}
